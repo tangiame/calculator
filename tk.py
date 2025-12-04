@@ -18,3 +18,9 @@ import numpy as np
 print("my numpy array is,")
 arr1d = np.array([1, 2, 3, 4, 5])
 
+
+
+
+
+
+

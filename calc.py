@@ -13,13 +13,18 @@ darkOrange = "#e07b39"
 lightOrange = "#80931e" 
 whiteOrange = "#edb879" 
 fontButtons = ("Arial", 18) 
-fontDisplay = ("Arial", 30) 
+fontDisplay = ("Arial", 30)
+btnMultiply = tk.Button(root, text="multiply")
+btnDivide = tk.Button(root, text="divide")
+btnDecimal = tk.Button(text='decimal')
+
+
 
 #function definitions 
 def submitNumber(number): 
     """add a number or decimal to the display (Docstring)""" 
     display.insert(END, number)
-    if "." is display.get(): 
+    if "." == display.get(): 
         btnDecimal.config(state=DISABLED)
 
 def operation(operator): 
@@ -33,8 +38,7 @@ def operation(operator):
 
     #delete the value from the display
     display.delete(0,END) 
-    btnMultiply = tk.Button(root, text="multiply")
-    btnDivide = tk.Button(root, text="divide")
+    
     #disable all operator buttons until equal or clear is pressed 
     btnAddition.config(state=DISABLED)
     btnSubtract.config(state=DISABLED)
@@ -44,8 +48,7 @@ def operation(operator):
     btnInverse.config(state=DISABLED)
     btnSquare.config(state=DISABLED)
 #enable decimal button for the next number Entry
-btnDecimal = tk.Button(text='decimal')
-btnDecimal.config(state=NORMAL) 
+btnDecimal.config(state=NORMAL)
 
 def equal(): 
     """run the stored operation for two number""" 
@@ -69,7 +72,8 @@ def equal():
 
     #return button to normal state
     enableOperationButtons
-
+btnMultiply = tk.Button(root, text="multiply")
+btnDivide = tk.Button(root, text="divide")
 def enableOperationButtons(): 
     btnAddition.config(state=NORMAL)
     btnSubtract.config(state=NORMAL)
@@ -109,6 +113,8 @@ display = tk.Entry(frameDisplay, width = 50, font=fontDisplay, bg=whiteOrange, b
 display.pack(padx=5, pady=5) 
 
 #second work with the frameButton 
+frameButton.place(x=50, y=50)
+
 btnClear = tk.Button(frameButton, text="Clear", font=fontButtons, bg=darkOrange, command=clear)
 btnQuiz = tk.Button(frameButton, text="Quit", font=fontButtons, bg=darkOrange, command=clear)
 
@@ -134,3 +140,4 @@ btn3 = tk.Button(frameButton, text="3", font=fontButtons, bg="white", fg="black"
 btn2 = tk.Button(frameButton, text="2", font=fontButtons, bg="white", fg="black")
 btn1 = tk.Button(frameButton, text="1", font=fontButtons, bg="white", fg="black")
 btn0 = tk.Button(frameButton, text="0", font=fontButtons, bg="white", fg="black")
+tk.mainloop()
