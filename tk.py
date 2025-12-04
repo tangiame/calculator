@@ -13,12 +13,6 @@ l1.grid(column=0 , row=1)
 # do this to open window
 rootw.mainloop()
 
-import numpy as np
-#make numpy array
-print("my numpy array is,")
-arr1d = np.array([1, 2, 3, 4, 5])
-
-
 
 
 
